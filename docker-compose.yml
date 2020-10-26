@@ -13,9 +13,13 @@ services:
     
         volumes: 
             - ./init:/docker-entrypoint-initdb.d
+        networks:
+            - testing_net    
 
     adminer:
         image: adminer
         restart: always
         ports: 
             - 8080:8080
+networks:
+  testing_net:
